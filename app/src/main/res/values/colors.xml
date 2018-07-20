@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!--<color name="colorPrimary">#5594cc</color>-->
+    <color name="colorPrimary">#cbcbcb</color>
+    <color name="colorPrimaryDark">#2e3192</color>
+    <color name="colorAccent">#2e3192</color>
+    <color name="yellow">#f8f38a</color>
+
+    <color name="brown">#70003b</color>
+    <color name="pink">#ed2899</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="white_greyish">#EEEEEE</color>
+    <color name="button_selectorcolor">#9E9E9E</color>
+    <color name="grey">#e3e3e3</color>
+    <color name="action_bar_colour">#263d8d</color>
+    <color name="business_port_text">#ff9933</color>
+    <color name="current_location">#006699</color>
+    <color name="colorHeader">#333333</color>
+    <color name="logo_color">#29B6F6</color>
+    <color name="White">#FFFFFF</color>
+    <color name="LightYellow">#FFFFE0</color>
+    <color name="Red">#FF0000</color>
+    <color name="AntiqueWhite">#FAEBD7</color>
+    <color name="GhostWhite">#F8F8FF</color>
+    <color name="PaleVioletRed">#DB7093</color>
+    <color name="light_red">#FF6A6A</color>
+    <color name="MediumVioletRed">#C71585</color>
+    <color name="LimeGreen">#32CD32</color>
+    <color name="MidnightBlue">#191970</color>
+
+    <color name="DarkBlue">#00008B</color>
+
+    <!--Color for circular progress percentage-->
+
+    <color name="gray_light_x">#E6E6E6</color>
+
+
+    <color name="gray_light">#C0C0C0</color>
+
+    <color name="gray">#808080</color>
+
+    <color name="green">#008000</color>
+    <color name="trans">#00000000</color>
+    <color name="dark_trans">#80000000</color>
+    <color name="black_shade">#333332</color>
+    <color name="gray_shade">#f3f3f3</color>
+    <color name="green_shade">#21ce99</color>
+
+</resources>

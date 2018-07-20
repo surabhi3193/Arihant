@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.VacancyActivity">
+
+    <include
+        layout="@layout/back_layout"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/logo_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textColor="@color/colorAccent"
+                android:text="@string/contact_form"/>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/gray"
+                android:text="All fields are mandatory *"/>
+
+
+            <EditText
+                android:id="@+id/nameEt"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/blue_rect"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="text"
+                android:imeOptions="actionNext"
+                android:hint="@string/full_name"/>
+
+            <EditText
+                android:id="@+id/emailEt"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:background="@drawable/blue_rect"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/email"/>
+
+            <EditText
+                android:id="@+id/phoneEt"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:background="@drawable/blue_rect"
+                android:paddingLeft="15dp"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:layout_marginTop="20dp"
+                android:imeOptions="actionNext"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/contact_no"/>
+            <EditText
+                android:id="@+id/msgEt"
+                android:textSize="14sp"
+                android:paddingTop="5dp"
+                android:gravity="start"
+                android:minHeight="100dp"
+                android:background="@drawable/blue_rect"
+                android:imeOptions="actionDone"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Message"/>
+
+            <Button
+                android:id="@+id/submit_btn"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:background="@drawable/blue_btn"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="Submit"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/htmltext"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

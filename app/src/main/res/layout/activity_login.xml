@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:gravity="center"
+    android:background="@drawable/bg2"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/logo"
+            android:layout_width="170dp"
+            android:layout_height="110dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/logo"
+            android:contentDescription="@string/logo" />
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/logo"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:drawableLeft="@drawable/user"
+                    android:cursorVisible="true"
+                    android:textCursorDrawable="@null"
+                    android:fontFamily="@font/montserrat"
+                    android:textSize="15sp"
+                    android:id="@+id/usernameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="@color/black"
+                    android:hint="@string/username"
+                    android:textColorHint="@color/black"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/user" />
+
+            <EditText
+                android:drawableLeft="@drawable/password_icon"
+                android:cursorVisible="true"
+                android:textCursorDrawable="@null"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:inputType="textPassword"
+                android:id="@+id/passEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="@color/black"
+                android:hint="@string/password"
+                android:textColorHint="@color/black"
+                android:drawablePadding="10dp"/>
+            <CheckBox
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:id="@+id/cbShowPwd"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/show_pwd" />
+
+                <Button
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/blue_btn"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textColor="@color/white"
+                    android:id="@+id/login_btn" />
+
+            <TextView
+                android:fontFamily="@font/montserrat"
+                android:padding="10dp"
+                android:id="@+id/forgot_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/brown"
+                android:text="@string/forgot_password"/>
+
+            <TextView
+                android:padding="10dp"
+                android:id="@+id/create_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:text="@string/not_a_member_register"/>
+        </LinearLayout>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="8sp"
+            android:textColor="@color/colorAccent"
+            android:text="@string/copyright"
+            tools:ignore="SmallSp" />
+</RelativeLayout>

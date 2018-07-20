@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="170dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/logo"
+            android:contentDescription="@string/logo" />
+        <EditText
+            android:singleLine="true"
+            android:id="@+id/nameEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="20dp"
+            android:cursorVisible="true"
+            android:drawableLeft="@drawable/user"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/user"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/full_name"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp"
+            android:imeOptions="actionNext"/>
+
+        <EditText
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:id="@+id/adharEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:maxLength="12"
+            android:cursorVisible="true"
+            android:drawableLeft="@drawable/adhaar"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/adhaar"
+            android:fontFamily="@font/montserrat"
+            android:hint="Aadhaar Card Number"
+            android:inputType="phone"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <EditText
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:id="@+id/emailEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:cursorVisible="true"
+            android:drawableLeft="@drawable/email_icon"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/email_icon"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <EditText
+            android:singleLine="true"
+            android:id="@+id/passEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:cursorVisible="true"
+            android:drawableLeft="@drawable/password_icon"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/password_icon"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+        <EditText
+            android:singleLine="true"
+
+            android:imeOptions="actionNext"
+            android:id="@+id/countryEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:cursorVisible="true"
+            android:drawableLeft="@drawable/location_icon"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/location_icon"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/country"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <EditText
+            android:singleLine="true"
+
+            android:imeOptions="actionNext"
+            android:id="@+id/cityEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:cursorVisible="true"
+            android:drawableLeft="@drawable/city_icon"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/city_icon"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/city"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <TextView
+            android:backgroundTint="@color/black"
+            android:gravity="center_vertical"
+            android:id="@+id/dobEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:cursorVisible="true"
+            android:drawableLeft="@drawable/dob_icon"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/dob_icon"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/dob"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <EditText
+            android:singleLine="true"
+
+            android:imeOptions="actionNext"
+            android:id="@+id/userid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:cursorVisible="true"
+            android:drawableLeft="@drawable/userid_icon"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/userid_icon"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/username"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:singleLine="true"
+
+            android:imeOptions="actionDone"
+            android:id="@+id/contactEt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:cursorVisible="true"
+            android:drawableLeft="@drawable/phone_icon"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/phone_icon"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/contact_no"
+            android:inputType="phone"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:textColor="@color/black"
+            android:id="@+id/chTerms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/i_accept_all_terms_and_conditions"
+            android:textColorHint="@color/black" />
+
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/blue_btn"
+            android:text="@string/register"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/login_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/already_a_member_login"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:gravity="bottom"
+            android:padding="10dp"
+            android:text="@string/copyright"
+            android:textColor="@color/colorAccent"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            tools:ignore="SmallSp" />
+    </LinearLayout>
+
+</ScrollView>

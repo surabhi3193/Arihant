@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:iconTint="@color/colorAccent"
+            android:id="@+id/home_bar"
+            android:icon="@drawable/home"
+            android:title="Home" />
+        <item
+            android:id="@+id/aboutus"
+            android:icon="@drawable/about_32"
+            android:title="About Us" />
+        <item
+            android:id="@+id/contact"
+            android:icon="@drawable/contact_us"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/vacancy"
+            android:icon="@drawable/job"
+            android:title="Vacancy" />
+
+        <item
+            android:id="@+id/exams"
+            android:icon="@drawable/online_exam"
+            android:title="Our Online Exams" />
+
+        <item
+            android:id="@+id/address"
+            android:icon="@drawable/direction"
+            android:title="Get Direction" />
+
+
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/share_app"
+            android:title="Share App" />
+
+        <item
+            android:id="@+id/rate"
+            android:icon="@drawable/rate_app"
+            android:title="Rate App" />
+
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout_icon"
+            android:title="Logout" />
+
+    </group>
+
+</menu>

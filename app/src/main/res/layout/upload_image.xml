@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    android:layout_margin="10dp"
+    android:padding="15dp"
+    android:background="@drawable/textview_back_of_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loaderGif"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/book_headerTV"
+        android:textSize="22sp"
+        android:text="Upload Picture Option"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/gallery_btn"
+        android:drawablePadding="15dp"
+        android:drawableLeft="@drawable/gallery"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:layout_below="@+id/book_headerTV"
+        android:textSize="20sp"
+        android:text="Gallery"
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/camera_btn"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:drawablePadding="15dp"
+        android:layout_below="@+id/gallery_btn"
+        android:textSize="20sp"
+        android:text="Camera"
+        android:drawableLeft="@drawable/camera"
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

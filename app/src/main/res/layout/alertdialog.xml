@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="15dp"
+    android:paddingTop="5dp"
+    android:background="@drawable/textview_back_of_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loaderGif"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/cancel_btn"
+        android:layout_gravity="end"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="18dp"
+        android:src="@drawable/cancel" />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/book_headerTV"
+        android:textSize="22sp"
+        android:text="@string/password_reset"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:gravity="center"
+        android:paddingLeft="7dp"
+        android:paddingTop="7dp"
+        android:textSize="15sp"
+        android:text="To reset your password, enter the email address you used to signin"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:paddingLeft="12dp"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:id="@+id/emailEt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="2dp"
+        android:cursorVisible="true"
+        android:fontFamily="@font/montserrat"
+        android:hint="you@example.com"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray_light"
+        android:textCursorDrawable="@null"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:background="@drawable/blue_rect"
+        android:id="@+id/ok_btn"
+        android:textSize="15sp"
+        android:text="@string/get_reset_link"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

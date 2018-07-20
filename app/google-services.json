@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "979454406733",
+    "firebase_url": "https://arihant-d2ee6.firebaseio.com",
+    "project_id": "arihant-d2ee6",
+    "storage_bucket": "arihant-d2ee6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979454406733:android:8dce40f7d02e98bc",
+        "android_client_info": {
+          "package_name": "com.arihanteducationgroup.online.indore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979454406733-d8qj52bj00e3vev5lh04lglm6328a7nn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYk7L8_poYxSGUHdu5BMks4XHETipYB1U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979454406733:android:858cd7b379ab5520",
+        "android_client_info": {
+          "package_name": "com.surabhi.admin.arihant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979454406733-d8qj52bj00e3vev5lh04lglm6328a7nn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYk7L8_poYxSGUHdu5BMks4XHETipYB1U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
