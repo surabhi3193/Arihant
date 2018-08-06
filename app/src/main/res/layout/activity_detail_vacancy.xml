@@ -31,14 +31,13 @@
         android:layout_height="200dp"
         />
 
-    <TextView
+    <org.sufficientlysecure.htmltextview.HtmlTextView
+        android:id="@+id/descTV"
+        android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:padding="10dp"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/descTV" />
-
-
+        android:textAppearance="@android:style/TextAppearance.Small" />
     <TextView
         android:visibility="gone"
         android:padding="10dp"

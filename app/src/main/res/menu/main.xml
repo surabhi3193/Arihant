@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/action_right_drawer"
-        android:orderInCategory="100"
-        android:icon="@drawable/notification_icon"
-        android:title="Notification"
-        app:showAsAction="always" />
+xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/action_right_drawer"
+    android:orderInCategory="100"
+    android:icon="@drawable/notification_icon"
+    android:title="Notification"
+    app:showAsAction="always" />
 </menu>

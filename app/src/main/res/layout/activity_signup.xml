@@ -186,15 +186,30 @@
             android:textColorHint="@color/black"
             android:textCursorDrawable="@null"
             android:textSize="15sp" />
-
-        <CheckBox
-            android:textColor="@color/black"
-            android:id="@+id/chTerms"
+        <LinearLayout
+            android:gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/i_accept_all_terms_and_conditions"
-            android:textColorHint="@color/black" />
+            android:orientation="horizontal">
+            <CheckBox
+                android:textColor="@color/black"
+                android:id="@+id/chTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black" />
+
+            <TextView
+                android:textColorLink="@color/pink"
+                android:gravity="center_vertical"
+                android:id="@+id/termsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/i_accept_all_terms_and_conditions"
+                android:textColor="@color/black"
+                />
+
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/register_btn"

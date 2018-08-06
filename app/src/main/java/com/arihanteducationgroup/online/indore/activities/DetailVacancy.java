@@ -7,15 +7,23 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.FileUriExposedException;
+import android.os.StrictMode;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.FileProvider;
 import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.arihanteducationgroup.online.indore.BuildConfig;
 import com.arihanteducationgroup.online.indore.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+
+import org.sufficientlysecure.htmltextview.HtmlResImageGetter;
+import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -44,14 +52,16 @@ public class DetailVacancy extends BaseActivity {
         TextView downloadTV = findViewById(R.id.downloadTV);
          tv_loading = findViewById(R.id.tv_loading);
         TextView dateTV = findViewById(R.id.dateTV);
-        TextView descTV = findViewById(R.id.descTV);
+        HtmlTextView descTV = findViewById(R.id.descTV);
         ImageView back_btn = findViewById(R.id.back_btn);
         ImageView iconIV = findViewById(R.id.iconIV);
         Bundle bundle = getIntent().getExtras();
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder(); StrictMode.setVmPolicy(builder.build());
+
         if (bundle != null) {
             String title = bundle.getString("vacancies_title");
             String vacancies_icon_img = bundle.getString("vacancies_icon_img", "");
-            String vacancies_desc = bundle.getString("vacancies_desc");
+            String vacancies_desc = bundle.getString("vacancies_desc","");
             String date = bundle.getString("date", "");
             pdfUrl = bundle.getString("PDF", "");
             headerTv.setText(title);
@@ -61,12 +71,13 @@ public class DetailVacancy extends BaseActivity {
                 dateTV.setText(date);
             } else
                 dateTV.setVisibility(View.GONE);
+            System.out.println(vacancies_desc);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                descTV.setText(Html.fromHtml(vacancies_desc, Html.FROM_HTML_MODE_COMPACT));
+            descTV.setRemoveFromHtmlSpace(true);
 
-            else
-                descTV.setText(Html.fromHtml(vacancies_desc));
+            descTV.setHtml(vacancies_desc,
+                    new HtmlResImageGetter(descTV));
+
 
             if (vacancies_icon_img.length() > 0)
                 Glide.with(getApplicationContext()).load(vacancies_icon_img).apply(RequestOptions
@@ -106,7 +117,6 @@ public class DetailVacancy extends BaseActivity {
                     boolean permission = checkWriteStoragePermission(DetailVacancy.this);
                     if (permission)
                     downloadAndOpenPDF(pdfUrl);
-
                 }
             });
         }
@@ -116,17 +126,25 @@ public class DetailVacancy extends BaseActivity {
 
     void downloadAndOpenPDF(final String download_file_url) {
         new Thread(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             public void run() {
-                Uri path = Uri.fromFile(downloadFile(download_file_url));
+               Uri path = Uri.fromFile(downloadFile(download_file_url));
                 try {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setDataAndType(path, "application/pdf");
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                     startActivity(intent);
                     finish();
                 } catch (ActivityNotFoundException e) {
                     tv_loading
                             .setError("PDF Reader application is not installed in your device");
+                }
+
+                catch (FileUriExposedException e )
+                {
+                    Toast.makeText(DetailVacancy.this,"Nougat Error ",Toast.LENGTH_LONG).show();
+
                 }
             }
         }).start();
@@ -211,5 +229,6 @@ public class DetailVacancy extends BaseActivity {
         });
 
     }
+
 
 }

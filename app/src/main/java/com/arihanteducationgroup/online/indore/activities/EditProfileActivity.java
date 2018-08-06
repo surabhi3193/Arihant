@@ -72,7 +72,6 @@ public class EditProfileActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
-
         final ImageView show_btn = findViewById(R.id.show_btn);
         passEt = findViewById(R.id.passEt);
         done_btn = findViewById(R.id.done_btn);

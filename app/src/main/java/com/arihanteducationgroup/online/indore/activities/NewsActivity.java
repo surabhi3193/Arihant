@@ -257,7 +257,7 @@ public class NewsActivity extends BaseActivity {
                             String vacancies_title = jsonObject.getString("title");
                             String vacancies_icon_img = jsonObject.getString("image_pdf");
                             String vacancies_noti_pdf = jsonObject.getString("pdf");
-                            String vacancies_desc = jsonObject.getString("\tnotice");
+                            String vacancies_desc = jsonObject.getString("notice");
                             String date =jsonObject.getString("time");
                             Vacancy vacancy = new Vacancy(vacancies_id,vacancies_title,vacancies_icon_img,vacancies_desc,vacancies_noti_pdf,date,"");
                             vacancydata.add(vacancy);

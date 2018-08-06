@@ -174,6 +174,7 @@ public class Main2Activity extends BaseActivity implements NavigationView.OnNavi
 
             }
         });
+
     }
 
     @Override
@@ -239,6 +240,7 @@ public class Main2Activity extends BaseActivity implements NavigationView.OnNavi
 
 
             case R.id.exams:
+
 //                Intent i = new Intent(Main2Activity.this, NewsActivity.class);
 //                i.putExtra("header_name", "Online Exams");
 //                startActivity(i);

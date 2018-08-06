@@ -75,9 +75,6 @@ public class VacancyAdapter extends RecyclerView.Adapter<VacancyAdapter.ViewHold
             viewHolder.imageView.setVisibility(View.GONE);
 
 
-        if (vacancy.getPost_date().length() == 0)
-            viewHolder.dateTV.setText("Today");
-
         viewHolder.txtName.setMaxLines(2);
         viewHolder.txtName.setTextSize(13);
         viewHolder.dateTV.setTextSize(10);

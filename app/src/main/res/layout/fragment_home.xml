@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:focusableInTouchMode="true"
-    android:scrollbars="none"
-    android:id="@+id/scrollview"
-    android:fillViewport="true">
+    android:scrollbars="none">
 
     <RelativeLayout
-        android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
 
         <RelativeLayout
-            android:focusable="true"
             android:id="@+id/mainSlider"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_alignParentTop="true">
+            android:layout_alignParentTop="true"
+            android:focusable="true">
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/pager"
@@ -37,12 +37,12 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:id="@+id/centreTab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/mainSlider"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -56,23 +56,24 @@
 
                 <LinearLayout
                     android:id="@+id/about_btn"
-
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/clicked_btn"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
-                        android:padding="5dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/about_32"/>
+                        android:padding="5dp"
+                        android:src="@drawable/about_32" />
 
                     <TextView
-                        android:padding="5dp"
-                        android:text="About Us"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="About Us"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
@@ -86,23 +87,26 @@
 
                 <LinearLayout
                     android:id="@+id/exam_btn"
-
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/clicked_btn"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
-                        android:padding="5dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/online_exam"/>
+                        android:padding="5dp"
+                        android:src="@drawable/online_exam" />
 
                     <TextView
-                        android:padding="5dp"
-                        android:text="Our Online Exams"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Our Online Exams"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
@@ -112,10 +116,10 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
                 android:id="@+id/tab1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="10dp"
@@ -123,23 +127,24 @@
 
                 <LinearLayout
                     android:id="@+id/result_btn"
-
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/clicked_btn"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
-                        android:padding="5dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/result_32"/>
+                        android:padding="5dp"
+                        android:src="@drawable/result_32" />
 
                     <TextView
-                        android:padding="5dp"
-                        android:text="Mock Test Results"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Mock Test Results"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
@@ -154,22 +159,24 @@
 
                 <LinearLayout
                     android:id="@+id/vacancy_btn"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/clicked_btn"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
-                        android:padding="5dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/job"/>
+                        android:padding="5dp"
+                        android:src="@drawable/job" />
 
                     <TextView
-                        android:padding="5dp"
-                        android:text="Vacancy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Vacancy"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
@@ -177,13 +184,12 @@
             </LinearLayout>
 
 
-
             <LinearLayout
-                android:layout_marginTop="10dp"
-
                 android:id="@+id/tab3"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="10dp"
@@ -191,23 +197,25 @@
 
                 <LinearLayout
                     android:id="@+id/affairs_btn"
-
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/clicked_btn"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
-                        android:padding="5dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/affairs"/>
+                        android:padding="5dp"
+                        android:src="@drawable/affairs" />
 
                     <TextView
-                        android:padding="5dp"
-                        android:text="Current Affairs"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Current Affairs"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
@@ -220,35 +228,38 @@
 
                 <LinearLayout
                     android:id="@+id/news_btn"
-
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/clicked_btn"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
-                        android:padding="5dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/news_32"/>
+                        android:padding="5dp"
+                        android:src="@drawable/news_32" />
 
                     <TextView
-                        android:padding="5dp"
-                        android:text="College News"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="College News"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
 
+            <LinearLayout
                 android:id="@+id/tab2"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tab1"
+                android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="10dp"
@@ -257,24 +268,26 @@
 
                 <LinearLayout
                     android:id="@+id/address_btn"
+                    android:layout_width="0dp"
 
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/clicked_btn"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     tools:ignore="UseCompoundDrawables">
+
                     <ImageView
-                        android:padding="5dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/direction"/>
+                        android:padding="5dp"
+                        android:src="@drawable/direction" />
 
                     <TextView
-                        android:padding="5dp"
-                        android:text="Get Direction"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Get Direction"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
@@ -288,22 +301,25 @@
 
                 <LinearLayout
                     android:id="@+id/gallery_btn"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
+
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/clicked_btn"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
-                        android:padding="5dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/gallery_main"/>
+                        android:padding="5dp"
+                        android:src="@drawable/gallery_main" />
 
                     <TextView
-                        android:padding="5dp"
-                        android:text="Gallery"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Gallery"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
@@ -312,11 +328,11 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
                 android:id="@+id/tab5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tab1"
+                android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="10dp"
@@ -325,22 +341,26 @@
 
                 <LinearLayout
                     android:id="@+id/courses_btn"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/clicked_btn"
+                    android:gravity="center"
+                    android:orientation="vertical"
                     tools:ignore="UseCompoundDrawables">
+
                     <ImageView
-                        android:padding="5dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/courses"/>
-                    <TextView
                         android:padding="5dp"
-                        android:text="College Courses"
+                        android:src="@drawable/courses" />
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="College Courses"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
@@ -354,23 +374,24 @@
 
                 <LinearLayout
                     android:id="@+id/contact_btn"
-
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/clicked_btn"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <ImageView
-                        android:padding="5dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/contact_us"/>
+                        android:padding="5dp"
+                        android:src="@drawable/contact_us" />
 
                     <TextView
-                        android:padding="5dp"
-                        android:text="Contact Us"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Contact Us"
                         android:textAllCaps="true"
                         android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
@@ -378,7 +399,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
 
 
     </RelativeLayout>

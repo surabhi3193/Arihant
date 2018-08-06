@@ -5,12 +5,18 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
 
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -54,7 +60,28 @@ public class SignupActivity extends BaseActivity {
         final EditText useridEt = findViewById(R.id.userid);
         final EditText contactEt = findViewById(R.id.contactEt);
         final CheckBox chTerms = findViewById(R.id.chTerms);
+        final TextView termsTV = findViewById(R.id.termsTV);
         Button register_btn = findViewById(R.id.register_btn);
+
+        SpannableString str_textciew = SpannableString.valueOf(termsTV.getText().toString());
+
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View textView) {
+                openDialog("http://www.arihanteducationgroup.com/arihant-html/term_condition.php");
+
+            }
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(false);
+            }
+        };
+        str_textciew.setSpan(clickableSpan, str_textciew.length()-20, str_textciew.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        termsTV.setText(str_textciew);
+        termsTV.setMovementMethod(LinkMovementMethod.getInstance());
+        termsTV.setHighlightColor(Color.TRANSPARENT);
+
 
         register_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -214,21 +241,10 @@ public class SignupActivity extends BaseActivity {
                         Toast.makeText(SignupActivity.this, response.getString("message"), Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    saveData(SignupActivity.this, "login", true);
-                    saveData(SignupActivity.this, "student_id", response.getString("student_id"));
-                    saveData(SignupActivity.this, "full_name", response.getString("full_name"));
-                    saveData(SignupActivity.this, "email", response.getString("email"));
-                    saveData(SignupActivity.this, "phone", response.getString("phone"));
-                    saveData(SignupActivity.this, "address", response.getString("address"));
-                    saveData(SignupActivity.this, "country", response.getString("country"));
-                    saveData(SignupActivity.this, "username", response.getString("username"));
-                    saveData(SignupActivity.this, "user_photo", response.getString("user_photo"));
-                    saveData(SignupActivity.this, "gender", response.getString("gender"));
-                    saveData(SignupActivity.this, "aadhaar", response.getString("aadhar_number"));
-                    saveData(SignupActivity.this,"dob",response.getString("dob"));
-                    saveData(SignupActivity.this, "password", password);
 
-                    startActivity(new Intent(SignupActivity.this, Main2Activity.class));
+                    Toast.makeText(SignupActivity.this, response.getString("message"), Toast.LENGTH_SHORT).show();
+
+                    startActivity(new Intent(SignupActivity.this, LoginActivity.class));
                     finish();
                 } catch (Exception e) {
                     e.printStackTrace();

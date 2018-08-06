@@ -95,7 +95,8 @@ public class VacancyActivity extends BaseActivity {
                                 String vacancies_icon_img = jsonObject.getString("vacancies_icon_img");
                                 String vacancies_noti_pdf = jsonObject.getString("vacancies_noti_pdf");
                                 String vacancies_desc = jsonObject.getString("vacancies_desc");
-                                String date ="";
+                                String date = jsonObject.getString("vacancies_date");
+
                                 Vacancy vacancy = new Vacancy(vacancies_id,vacancies_title,vacancies_icon_img,vacancies_desc,vacancies_noti_pdf,date,"");
                                 vacancydata.add(vacancy);
 

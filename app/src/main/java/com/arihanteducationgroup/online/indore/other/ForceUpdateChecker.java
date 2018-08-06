@@ -3,11 +3,15 @@ package com.arihanteducationgroup.online.indore.other;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.annotation.NonNull;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.arihanteducationgroup.online.indore.activities.SplashActivity;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
@@ -15,53 +19,89 @@ import org.jsoup.Jsoup;
 
 import java.io.IOException;
 
-public  class ForceUpdateChecker extends AsyncTask {
+public  class ForceUpdateChecker {
 
-    private String latestVersion;
-    private String currentVersion;
+
+    private static final String TAG = ForceUpdateChecker.class.getSimpleName();
+
+    public static final String KEY_UPDATE_REQUIRED = "force_update_required";
+    public static final String KEY_CURRENT_VERSION = "force_update_current_version";
+    public static final String KEY_UPDATE_URL = "force_update_store_url";
+
+    private OnUpdateNeededListener onUpdateNeededListener;
     private Context context;
-    public ForceUpdateChecker(String currentVersion, Context context){
-        this.currentVersion = currentVersion;
+
+    public interface OnUpdateNeededListener {
+        void onUpdateNeeded(String updateUrl);
+    }
+
+    public static Builder with(@NonNull Context context) {
+        return new Builder(context);
+    }
+
+    public ForceUpdateChecker(@NonNull Context context,
+                              OnUpdateNeededListener onUpdateNeededListener) {
         this.context = context;
+        this.onUpdateNeededListener = onUpdateNeededListener;
     }
 
-    public void showForceUpdateDialog(){
+    public void check() {
+        final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.getInstance();
 
-        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + context.getPackageName())));
-    }
+        if (remoteConfig.getBoolean(KEY_UPDATE_REQUIRED)) {
+            String currentVersion = remoteConfig.getString(KEY_CURRENT_VERSION);
+            String appVersion = getAppVersion(context);
+            String updateUrl = remoteConfig.getString(KEY_UPDATE_URL);
 
-    @Override
-    protected Object doInBackground(Object[] objects) {
 
-        try {
-            latestVersion = Jsoup.connect("https://play.google.com/store/apps/details?id=" + context.getPackageName()+ "&hl=en")
-                    .timeout(30000)
-                    .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
-                    .referrer("http://www.google.com")
-                    .get()
-                    .select("div.hAyfc:nth-child(3) > span:nth-child(2) > div:nth-child(1) > span:nth-child(1)")
-                    .first()
-                    .ownText();
-            Log.e("latestversion","---"+latestVersion);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return new JSONObject();
-    }
-
-    @Override
-    protected void onPostExecute(Object o) {
-        if(latestVersion!=null){
-            if(!currentVersion.equalsIgnoreCase(latestVersion)){
-                // Toast.makeText(context,"update is available.",Toast.LENGTH_LONG).show();
-                if(!(context instanceof SplashActivity)) {
-                    if(!((Activity)context).isFinishing()){
-                        showForceUpdateDialog();
-                    }
-                }
+            System.out.println("---- appversion and current version---- ");
+            System.out.println(appVersion);
+            System.out.println(currentVersion);
+            if (!TextUtils.equals(currentVersion, appVersion)
+                    && onUpdateNeededListener != null) {
+                onUpdateNeededListener.onUpdateNeeded(updateUrl);
             }
         }
-        super.onPostExecute(o);
+    }
+
+    private String getAppVersion(Context context) {
+        String result = "";
+
+        try {
+            result = context.getPackageManager()
+                    .getPackageInfo(context.getPackageName(), 0)
+                    .versionName;
+            result = result.replaceAll("[a-zA-Z]|-", "");
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(TAG, e.getMessage());
+        }
+
+        return result;
+    }
+
+    public static class Builder {
+
+        private Context context;
+        private OnUpdateNeededListener onUpdateNeededListener;
+
+        public Builder(Context context) {
+            this.context = context;
+        }
+
+        public Builder onUpdateNeeded(OnUpdateNeededListener onUpdateNeededListener) {
+            this.onUpdateNeededListener = onUpdateNeededListener;
+            return this;
+        }
+
+        public ForceUpdateChecker build() {
+            return new ForceUpdateChecker(context, onUpdateNeededListener);
+        }
+
+        public ForceUpdateChecker check() {
+            ForceUpdateChecker forceUpdateChecker = build();
+            forceUpdateChecker.check();
+
+            return forceUpdateChecker;
+        }
     }
 }
