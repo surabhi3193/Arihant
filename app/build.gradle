@@ -21,8 +21,8 @@ android {
         applicationId "com.arihanteducationgroup.online.indore"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 12
-        versionName "1.7.5"
+        versionCode 13
+        versionName "1.7.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

@@ -126,8 +126,6 @@ public class ContactUsActivity extends BaseActivity {
         GifImageView gifview = dialog.findViewById(R.id.loaderGif);
         gifview.setGifImageResource(R.drawable.books);
 
-
-
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
 
@@ -170,7 +168,5 @@ public class ContactUsActivity extends BaseActivity {
                 System.err.println(responseString);
             }
         });
-
-
     }
 }

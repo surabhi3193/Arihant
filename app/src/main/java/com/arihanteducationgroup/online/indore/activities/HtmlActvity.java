@@ -18,7 +18,7 @@ import com.arihanteducationgroup.online.indore.other.GifImageView;
 
 public class HtmlActvity extends BaseActivity {
     WebView webView;
-    ProgressBar progressBar;
+    GifImageView progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +27,8 @@ public class HtmlActvity extends BaseActivity {
         TextView headerTv =findViewById(R.id.header_text);
         WebView webView =findViewById(R.id.webview);
         ImageView back_btn =findViewById(R.id.back_btn);
-         progressBar = findViewById(R.id.loaderGif);
-
+        progressBar =findViewById(R.id.loaderGif);
+        progressBar.setGifImageResource(R.drawable.books);
         Bundle bundle =getIntent().getExtras();
         if (bundle !=null)
         {
@@ -55,7 +55,8 @@ public class HtmlActvity extends BaseActivity {
                 webView.loadUrl("http://www.arihanteducationgroup.com/arihant-html/about.php");
 
            else if (header.equalsIgnoreCase("Online Exam"))
-               webView.loadUrl("http://mock.arihanteducationgroup.com/take_exam");
+                webView.loadUrl("http://arihanteducationgroup.com/arihant-html/onlineexam.html");
+//            webView.loadUrl("http://mock.arihanteducationgroup.com/take_exam");
            else
                 webView.loadUrl("http://arihanteducationgroup.com/arihant-html/founder.html");
 
